@@ -1,0 +1,77 @@
+body {
+  background-color: rgba(255, 123, 0, 0.558);
+}
+
+h1#timer {
+  font-size: 80px;
+  color: rgb(250, 5, 50);
+}
+
+/* === Строка 1103 ts === */
+.notification {
+  position: fixed;
+  z-index: 1000;
+  padding: 5px;
+  border: 5px solid rgb(0, 0, 0);
+  font-size: 100px;
+  background: rgb(234, 0, 255);
+  text-align: center;
+  border-radius: 10px;
+}
+
+button {
+  background-color: rgb(180, 153, 203);
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input {
+  background-color: aqua;
+  font-size: 20px;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+#hide_yourself {
+  margin-bottom: 20px;
+}
+
+#contents {
+  margin-bottom: 20px;
+}
+
+.pane__inner {
+  margin: 0;
+  padding-bottom: .3em;
+  padding-right: 20px;
+  font-size: 1.1em;
+  color: rgb(19, 7, 244);
+}
+
+p {
+  margin: 0;
+  padding: 0 0 .5em;
+}
+
+.pane {
+  background: #bcf568;
+  padding: 10px 20px 10px;
+  border: solid 2px #6f924d;
+  position: relative;
+}
+
+.remove-button {
+  position: absolute;
+  font-size: 110%;
+  top: 0;
+  color: darkred;
+  right: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
