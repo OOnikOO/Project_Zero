@@ -1047,7 +1047,7 @@ class MainBlockHtml {
   }
   getCode() {
 
-    const head = document.querySelector('head')
+    const head = document.querySelector('head') as HTMLHeadElement
     head.innerHTML += `<style>${this.cssArray.map((el) => el.getCss()).join('\n')}</style>`
 
     document.body.insertAdjacentHTML('beforeend', this.htmlObject.getHtml())
