@@ -961,7 +961,7 @@ class HtmlElement {
     this.elements.unshift(element)
   }
 
-  getHtml() {
+  getHtml():string {
     if (this.single) {
       return `<${this.tag} ${this.atrs.join(' ')} value = '${this.text}'>`
     } else {
