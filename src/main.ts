@@ -739,28 +739,28 @@ getSum(cheque)
 // Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
 
 
-const purchase = [
-  {
-    name: 'a',
-    count: 10,
-    purchased: true,
-  },
-  {
-    name: 'b',
-    count: 5,
-    purchased: false,
-  },
-  {
-    name: 'c',
-    count: 3,
-    purchased: true,
-  },
-  {
-    name: 'd',
-    count: 1,
-    purchased: false,
-  },
-]
+// const purchase = [
+//   {
+//     name: 'a',
+//     count: 10,
+//     purchased: true,
+//   },
+//   {
+//     name: 'b',
+//     count: 5,
+//     purchased: false,
+//   },
+//   {
+//     name: 'c',
+//     count: 3,
+//     purchased: true,
+//   },
+//   {
+//     name: 'd',
+//     count: 1,
+//     purchased: false,
+//   },
+// ]
 
 
 
@@ -1070,8 +1070,9 @@ function getWeekDay(date: any) {
   let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
   return days[date.getDay()]
 }
-let nowDate = new Date
-console.log(getWeekDay(new Date))
+let nowDate = new Date()
+console.log(nowDate)
+console.log(getWeekDay(new Date()))
 
 // В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2) и так до воскресенья (номер 7). Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date.
 
@@ -1102,7 +1103,7 @@ console.log('Сегодня', getWeekDay(new Date))
 // Используйте CSS-позиционирование для отображения элемента в заданных координатах. Исходный документ имеет необходимые стили.
 // ==============================
 
-function showNotification({ top = 0, right = 0, className, html }) {
+function showNotification({ top = 0, right = 0, className='', html='' }) {
   let notification = document.createElement('div')
   notification.className = 'notification'
   if (className) {
@@ -1125,30 +1126,33 @@ showNotification({
 
 
 // Добавьте JavaScript к кнопке button, чтобы при нажатии элемент <div id="text"> исчезал.
-document.getElementById('text').style.width = '200px'
-document.getElementById('text').style.textAlign = 'center'
-document.getElementById('text').style.margin = '10px 200px'
-document.getElementById('text').style.fontSize = '40px'
-document.getElementById('text').style.color = 'rgb(5, 5, 245)'
-document.getElementById('text').style.border = '2px solid black'
-document.getElementById('text').style.borderRadius = '10px'
+const textElement = document.getElementById('text') as HTMLElement
+textElement.style.width = '200px'
+textElement.style.textAlign = 'center'
+textElement.style.margin = '10px 200px'
+textElement.style.fontSize = '40px'
+textElement.style.color = 'rgb(5, 5, 245)'
+textElement.style.border = '2px solid black'
+textElement.style.borderRadius = '10px'
 
 
 function hideText() {
-  document.getElementById('text').style.display = 'none'
-  setTimeout(() => document.getElementById('text').style.display = 'block', 2000)
+  textElement.style.display = 'none'
+  setTimeout(() => textElement.style.display = 'block', 2000)
 }
 
-document.getElementById('hide_text').addEventListener("click", hideText)
+const hideTextElement = document.getElementById('hide_text') as HTMLElement
+hideTextElement.addEventListener("click", hideText)
 
 // Создайте кнопку, которая будет скрывать себя по нажатию.
 
+const hideYourselfElement = document.getElementById('hide_yourself') as HTMLElement
 function hideYourself() {
-  document.getElementById('hide_yourself').style.display = 'none'
-  setTimeout(() => document.getElementById('hide_yourself').style.display = 'block', 2000)
+  hideYourselfElement.style.display = 'none'
+  setTimeout(() => hideYourselfElement.style.display = 'block', 2000)
 }
 
-document.getElementById('hide_yourself').addEventListener("click", hideYourself)
+hideYourselfElement.addEventListener("click", hideYourself)
 
 
 // Поймайте переход по ссылке
@@ -1170,7 +1174,7 @@ const newsContainer = document.getElementById('container')
 
 newsContainer?.addEventListener('click', (e)=>{
 if ((e.target as HTMLElement).className != 'remove-button') return
-const pane = (e.target as HTMLElement).closest('.pane')
+const pane = (e.target as HTMLElement).closest('.pane') as HTMLElement
 pane.remove()
 }, {passive: true})
 
