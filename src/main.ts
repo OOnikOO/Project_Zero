@@ -968,7 +968,7 @@ class HtmlElement {
     this.elements.unshift(element)
   }
 
-  getHtml():string {
+  getHtml(): string {
     if (this.single) {
       return `<${this.tag} ${this.atrs.join(' ')} value = '${this.text}'>`
     } else {
@@ -1110,7 +1110,7 @@ console.log('Сегодня', getWeekDay(new Date))
 // Используйте CSS-позиционирование для отображения элемента в заданных координатах. Исходный документ имеет необходимые стили.
 // ==============================
 
-function showNotification({ top = 0, right = 0, className='', html='' }) {
+function showNotification({ top = 0, right = 0, className = '', html = '' }) {
   let notification = document.createElement('div')
   notification.className = 'notification'
   if (className) {
@@ -1172,16 +1172,16 @@ contents.innerHTML = '<p>Как насчёт того, чтобы прочита
 contents.addEventListener('click', (event) => {
   const target = (event.target as HTMLElement | null)?.closest('a')
   if (target && !confirm('Перейти по ссылке ' + target.href + '?')) {
-  event.preventDefault()
+    event.preventDefault()
   }
 })
 document.body.append(contents)
 
 const newsContainer = document.getElementById('container')
 
-newsContainer?.addEventListener('click', (e)=>{
-if ((e.target as HTMLElement).className != 'remove-button') return
-const pane = (e.target as HTMLElement).closest('.pane') as HTMLElement
-pane.remove()
-}, {passive: true})
+newsContainer?.addEventListener('click', (e) => {
+  if ((e.target as HTMLElement).className != 'remove-button') return
+  const pane = (e.target as HTMLElement).closest('.pane') as HTMLElement
+  pane.remove()
+}, { passive: true })
 

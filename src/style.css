@@ -56,7 +56,9 @@ p {
 }
 
 .pane {
+  width: 500px;
   background: #bcf568;
+  margin: 0 auto;
   padding: 10px 20px 10px;
   border: solid 2px #6f924d;
   position: relative;
